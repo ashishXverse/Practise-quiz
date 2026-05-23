@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pro Quiz Interface</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="background-blobs"></div>
+
+  <div class="top-bar">
+    <div class="progress-info">
+      <span id="progressText">Question 1/30</span>
+      <div class="progress-bar"><div id="progressFill"></div></div>
+    </div>
+    <label class="theme-switch">
+      <input type="checkbox" id="themeToggle" />
+      <span class="sun-moon"></span>
+    </label>
+  </div>
+
+  <div id="start-screen" class="card">
+    <h1>Web Dev Quiz</h1>
+    <p>30 Questions • 15s per question</p>
+    <button id="start-btn">Start Quiz</button>
+  </div>
+
+  <div class="card" id="quiz" style="display:none;">
+    <div id="timer-container">
+      <svg class="timer-svg" viewBox="0 0 100 100">
+        <circle class="timer-path" cx="50" cy="50" r="45"></circle>
+        <circle id="timer-bar" class="timer-remaining" cx="50" cy="50" r="45"></circle>
+      </svg>
+      <span id="time">15</span>
+    </div>
+    
+    <h2 id="question">Loading...</h2>
+
+    <div class="options-grid">
+      <button class="option" id="a"></button>
+      <button class="option" id="b"></button>
+      <button class="option" id="c"></button>
+      <button class="option" id="d"></button>
+    </div>
+
+    <button id="next" disabled>Next Question</button>
+  </div>
+
+  <div class="card result-card" id="scoreContainer" style="display:none;">
+    <h2>Quiz Complete!</h2>
+    <div class="score-circle">
+      <span id="finalScore">0</span>
+      <small id="rankText">Rank: Beginner</small>
+    </div>
+    <div id="reviewList"></div>
+    <button class="restart-btn" onclick="location.reload()">Try Again</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
